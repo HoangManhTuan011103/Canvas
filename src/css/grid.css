@@ -1,0 +1,42 @@
+.grid {
+    width: 100%;
+    display: block;
+    padding: 0;
+}
+
+.grid.wide {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+/* Row chứa các columns giúp các columns theo chiều ngang */
+
+
+/* Khi columns vượt quá kích thước row thì tự động xuống hàng */
+
+
+/* Loại bỏ khoảng thừa do gutters tạo ra ở 2 phía */
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+/* Tablet - PC low resolution */
+
+@media (min-width: 740px) and (max-width: 1023px) {
+    .wide {
+        width: 644px;
+    }
+}
+
+
+/* PC low resolution */
+
+@media (min-width: 1024px) and (max-width: 1239px) {
+    .wide {
+        width: 984px;
+    }
+}
