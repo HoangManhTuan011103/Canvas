@@ -12,7 +12,7 @@ document.querySelector('#app').innerHTML = `
     </a>
     <h1>Hello My!</h1>
     <div class="card">
-    <a href="grid.html">Xem trái tym thì vào đây nè</a>
+    <a href="grid.html">Nhấn vào đây có quà nè</a>
     </div>
     <p class="read-the-docs">
       
