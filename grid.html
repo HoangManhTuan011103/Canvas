@@ -35,8 +35,8 @@
     <script>
         var settings = {
             particles: {
-                length: 1050, // maximum amount of particles
-                duration: 25, // particle duration in sec
+                length: 650, // maximum amount of particles
+                duration: 20, // particle duration in sec
                 velocity: 110, // particle velocity in pixels/sec
                 effect: -0.8, // play with this for a nice effect
                 size: 40, // particle size in pixels
@@ -148,9 +148,9 @@
                 particles[firstFree].initialize(x, y, dx, dy);
                 // handle circular queue
                 firstFree++;
-                if (firstFree == particles.length) firstFree = 0;
+                if (firstFree == particles.length) firstFree = 1;
                 if (firstActive == firstFree) firstActive++;
-                if (firstActive == particles.length) firstActive = 0;
+                if (firstActive == particles.length) firstActive = 1;
             };
             ParticlePool.prototype.update = function(deltaTime) {
                 var i;
