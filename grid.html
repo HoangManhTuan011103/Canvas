@@ -148,9 +148,9 @@
                 particles[firstFree].initialize(x, y, dx, dy);
                 // handle circular queue
                 firstFree++;
-                if (firstFree == particles.length) firstFree = 1;
+                if (firstFree == particles.length) firstFree = 0;
                 if (firstActive == firstFree) firstActive++;
-                if (firstActive == particles.length) firstActive = 1;
+                if (firstActive == particles.length) firstActive = 0;
             };
             ParticlePool.prototype.update = function(deltaTime) {
                 var i;
