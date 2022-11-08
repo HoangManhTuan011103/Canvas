@@ -10,7 +10,8 @@ document.querySelector('#app').innerHTML = `
     <a class="tramy" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
       Trên đây là ảnh con ngu nào đó!
     </a>
-    <h1>Hi My! Chào cậu</h1>
+    <a class="inforHLU" href="https://www.facebook.com/profile.php?id=100073742532383" > Nhấn Vào Đây Để Đến Facebook Master Chef HLU Cộng Hòa</a>
+    <h1>Hi My! Chào cậu nhé</h1>
     <div class="card">
     <a href="grid.html" class="btn-click--see" >Nhấn vào đây có quà nè</a>
     </div>

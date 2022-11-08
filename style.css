@@ -86,6 +86,21 @@ h1 {
     padding: 2em;
 }
 
+.inforHLU {
+    display: block;
+    font-size: 15px;
+    padding: 10px;
+    color: #ffffff;
+    background-color: #213547;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.inforHLU:hover {
+    color: rgb(18, 172, 51);
+}
+
 .read-the-docs {
     color: #888;
 }
