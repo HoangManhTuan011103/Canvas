@@ -101,6 +101,10 @@ h1 {
     color: rgb(18, 172, 51);
 }
 
+.sing {
+    opacity: 0;
+}
+
 .read-the-docs {
     color: #888;
 }
