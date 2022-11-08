@@ -5,17 +5,17 @@ import { setupCounter } from './counter.js'
 document.querySelector('#app').innerHTML = `
   <div>
     <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
+      Thách ai con ranh con!...
     </a>
     <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-      <img src="${javascriptLogo}" class="logo vanilla" alt="JavaScript logo" />
+      Chào My nhé
     </a>
-    <h1>Hello Vite!</h1>
+    <h1>Hello My!</h1>
     <div class="card">
-      <button id="counter" type="button"></button>
+    <a href="grid.html">Xem trái tym thì vào đây nè</a>
     </div>
     <p class="read-the-docs">
-      Click on the Vite logo to learn more
+      
     </p>
   </div>
 `
