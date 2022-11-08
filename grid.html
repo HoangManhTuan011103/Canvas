@@ -38,7 +38,7 @@
                 length: 10000, // maximum amount of particles
                 duration: 20, // particle duration in sec
                 velocity: 80, // particle velocity in pixels/sec
-                effect: -1.5, // play with this for a nice effect
+                effect: -0.75, // play with this for a nice effect
                 size: 40, // particle size in pixels
             },
         };
@@ -71,9 +71,9 @@
         var Point = (function() {
             function Point(x, y) {
 
-                this.x = (typeof x !== 'undefined') ? x : 1;
+                this.x = (typeof x !== 'undefined') ? x : 0;
 
-                this.y = (typeof y !== 'undefined') ? y : 1;
+                this.y = (typeof y !== 'undefined') ? y : 0;
             }
             Point.prototype.clone = function() {
 
