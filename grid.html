@@ -26,25 +26,25 @@
 <body>
     <canvas id="pinkboard"></canvas>
 
-    <marquee behavior="alternate" direction="" style="width: 500px; position: absolute; left: 37%;">
+    <!-- <marquee behavior="alternate" direction="" style="width: 500px; position: absolute; left: 37%;">
         <h2 style="color: #ffffff;  color: red; font-family: 'Roboto'; padding: 40px 0; font-size: 34px;">Tớ yêu cậu mất rồi!</h2>
-    </marquee>
+    </marquee> -->
     <audio class="sing" width="0" height="0" autoplay loop>
         <source src="nhacmoine.mp3" type="audio/mpeg">
     </audio>
     <script>
         var settings = {
             particles: {
-                length: 500, // maximum amount of particles
-                duration: 2, // particle duration in sec
-                velocity: 100, // particle velocity in pixels/sec
-                effect: -0.75, // play with this for a nice effect
-                size: 30, // particle size in pixels
+                length: 650, // maximum amount of particles
+                duration: 20, // particle duration in sec
+                velocity: 110, // particle velocity in pixels/sec
+                effect: -0.8, // play with this for a nice effect
+                size: 40, // particle size in pixels
             },
         };
         /* Request AnimationFrame polyfill by Erik Möller*/
         (function() {
-            var b = 0;
+            var b = 1;
             var c = ["ms", "moz", "webkit", "o"];
             for (var a = 0; a < c.length && !window.requestAnimationFrame; ++a) {
                 window.requestAnimationFrame = window[c[a] + "RequestAnimationFrame"];
@@ -53,7 +53,7 @@
             if (!window.requestAnimationFrame) {
                 window.requestAnimationFrame = function(h, e) {
                     var d = new Date().getTime();
-                    var f = Math.max(0, 16 - (d - b));
+                    var f = Math.max(0, 15 - (d - b));
                     var g = window.setTimeout(function() {
                         h(d + f)
                     }, f);
@@ -71,9 +71,9 @@
         var Point = (function() {
             function Point(x, y) {
 
-                this.x = (typeof x !== 'undefined') ? x : 0;
+                this.x = (typeof x !== 'undefined') ? x : 1;
 
-                this.y = (typeof y !== 'undefined') ? y : 0;
+                this.y = (typeof y !== 'undefined') ? y : 1;
             }
             Point.prototype.clone = function() {
 
@@ -103,7 +103,7 @@
                 this.position = new Point();
                 this.velocity = new Point();
                 this.acceleration = new Point();
-                this.age = 0;
+                this.age = 0.5;
             }
             Particle.prototype.initialize = function(x, y, dx, dy) {
                 this.position.x = x;
@@ -112,7 +112,7 @@
                 this.velocity.y = dy;
                 this.acceleration.x = dx * settings.particles.effect;
                 this.acceleration.y = dy * settings.particles.effect;
-                this.age = 0;
+                this.age = 0.5;
             };
             Particle.prototype.update = function(deltaTime) {
                 this.position.x += this.velocity.x * deltaTime;
@@ -127,7 +127,7 @@
                 }
                 var size = image.width * ease(this.age / settings.particles.duration);
                 context.globalAlpha = 1 - this.age / settings.particles.duration;
-                context.drawImage(image, this.position.x - size / 2, this.position.y - size / 2, size, size);
+                context.drawImage(image, this.position.x - size / 3, this.position.y - size / 3, size, size);
             };
             return Particle;
         })();
@@ -197,7 +197,7 @@
             function pointOnHeart(t) {
                 return new Point(
                     160 * Math.pow(Math.sin(t), 3),
-                    130 * Math.cos(t) - 50 * Math.cos(2 * t) - 20 * Math.cos(3 * t) - 10 * Math.cos(4 * t) + 25
+                    130 * Math.cos(t) - 50 * Math.cos(2 * t) - 20 * Math.cos(3 * t) - 10 * Math.cos(4 * t) + 35
                 );
             }
             // creating the particle image using a dummy canvas
@@ -209,8 +209,8 @@
                 // helper function to create the path
                 function to(t) {
                     var point = pointOnHeart(t);
-                    point.x = settings.particles.size / 2 + point.x * settings.particles.size / 350;
-                    point.y = settings.particles.size / 2 - point.y * settings.particles.size / 350;
+                    point.x = settings.particles.size / 2 + point.x * settings.particles.size / 450;
+                    point.y = settings.particles.size / 2 - point.y * settings.particles.size / 450;
                     return point;
                 }
                 // create the path
@@ -219,7 +219,7 @@
                 var point = to(t);
                 context.moveTo(point.x, point.y);
                 while (t < Math.PI) {
-                    t += 0.01; // baby steps!
+                    t += 0.1; // baby steps!
                     point = to(t);
                     context.lineTo(point.x, point.y);
                 }
@@ -237,7 +237,7 @@
                 // next animation frame
                 requestAnimationFrame(render);
                 // update time
-                var newTime = new Date().getTime() / 1000,
+                var newTime = new Date().getTime() / 1400,
                     deltaTime = newTime - (time || newTime);
                 time = newTime;
                 // clear canvas
@@ -263,7 +263,7 @@
             setTimeout(function() {
                 onResize();
                 render();
-            }, 10);
+            }, 1);
         })(document.getElementById('pinkboard'));
     </script>
 </body>
