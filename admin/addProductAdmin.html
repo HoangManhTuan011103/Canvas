@@ -113,12 +113,16 @@
                     <div class="form--left">
                         <div class="name">
                             <p>Tên sản phẩm:</p>
-                            <input class="name" style=" background-color: #000000;" type="text" placeholder="Nhập tên sản phẩm...">
+                            <input class="name" name="nameProduct" style=" background-color: #000000;" type="text" placeholder="Nhập tên sản phẩm...">
                         </div>
                         <div class="image">
                             <p>Ảnh sản phẩm:</p>
-                            <input type="file" style="background-color: #0F172A;">
+                            <input type="file" name="image" style="background-color: #0F172A;">
                             <!-- <img width="150px" src="src/image/iphone14.jpg" alt=""> -->
+                        </div>
+                        <div class="imgaes">
+                            <p>Ảnh mô tả sản phẩm:</p>
+                            <input type="file" name="images[]" multiple="multiple" style="background-color: #0F172A;">
                         </div>
                         <div class="description">
                             <p>Mô tả sản phẩm:</p>
@@ -146,18 +150,18 @@
                         </div>
                         <div class="pice">
                             <p>Giá sản phẩm:</p>
-                            <input type="text">
+                            <input type="number" name="price">
                         </div>
                         <div class="discount">
                             <p>% Khuyến mại:</p>
-                            <input type="text">
+                            <input type="number" name="discount">
                         </div>
                         <div class="quantity">
                             <p>Số lượng:</p>
-                            <input type="text">
+                            <input type="number" name="amount">
                         </div>
                         <div class="special">
-                            <input type="checkbox" id="special">
+                            <input type="checkbox" id="special" name="hotProduct">
                             <label for="special" style="font-size: 15px;">Sản phẩm đặc biệt</label>
                         </div>
                         <div class="btn__action btn__action--addProduct">
